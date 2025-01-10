@@ -1,0 +1,11 @@
+---
+const { href, target } = Astro.props;
+---
+
+<a
+  href={href}
+  target={target}
+  class="flex items-center gap-1 text-btns hover:text-btns/90 bg-black/50 px-2 py-1 rounded-lg"
+>
+  <slot />
+</a>

@@ -1,0 +1,24 @@
+---
+import SectionCard from "./SectionCard.astro";
+import skills from "../../data/skills.json";
+---
+
+<SectionCard title="Tecnologías">
+  <div class="flex flex-wrap gap-2 justify-center">
+    {
+      skills.map((skill) => (
+        <div class="size-12 relative group rounded-lg">
+          <span class="absolute top-0 left-[50%] -translate-x-[50%] -translate-y-[125%] opacity-0 transition-opacity bg-custom px-2 uppercase font-bold rounded-lg hidden group-hover:inline group-hover:opacity-100">
+            {skill.title}
+          </span>
+
+          <img
+            src={`/icons/${skill.icon}`}
+            alt={`Icono de ${skill.title}`}
+            class="size-full group-hover:scale-110 transition-transform"
+          />
+        </div>
+      ))
+    }
+  </div>
+</SectionCard>

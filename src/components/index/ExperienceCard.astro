@@ -1,0 +1,90 @@
+---
+interface IExperienceCardProps {
+  name: string;
+  description: string;
+  skills: string[];
+  time: string[];
+  github?: string;
+  website?: string;
+  index: number;
+}
+
+import { Icon } from "astro-icon/components";
+import mySkills from "../../data/skills.json";
+const { name, description, skills, time, github, website, index } =
+  Astro.props as IExperienceCardProps;
+---
+
+<section
+  class:list={[
+    "w-full md:w-[calc(50%-1rem)] flex justify-start py-2",
+    { "self-start": index % 2 === 0 },
+    { "self-end": index % 2 === 1 },
+  ]}
+>
+  <div
+    class="border border-custom2 shadow shadow-white/50 w-full px-3 py-4 md:py-8 md:px-5 rounded-lg flex flex-col gap-2"
+  >
+    <div
+      class:list={[
+        "flex items-center gap-6 flex-row",
+        { "md:flex-row-reverse": index % 2 === 0 },
+        { "md:flex-row": index % 2 === 1 },
+      ]}
+    >
+      <div class="size-3 rounded-full bg-custom"></div>
+
+      <div>
+        <h3 class="text-title text-xl">{name}</h3>
+        <p class="text-sm text-gray-400">{time.join(" - ")}</p>
+      </div>
+    </div>
+
+    <p class="bg-white/10 rounded-md p-2">
+      {description}
+    </p>
+
+    <div class="flex flex-col gap-2">
+      <div
+        class="flex gap-1 justify-center bg-white/10 py-2 rounded-md flex-wrap"
+      >
+        {
+          skills.map((skill) => (
+            <img
+              src={`/icons/${mySkills.find((s) => s.title.toLowerCase() === skill.toLowerCase())?.icon}`}
+              alt={skill}
+              class="size-6"
+            />
+          ))
+        }
+      </div>
+
+      <div class="flex items-center gap-1">
+        {
+          github && (
+            <a
+              href={github}
+              target="_blank"
+              title="Visitar repositorio"
+              class="rounded-full flex items-center justify-center size-10 transition-colors hover:bg-white/10"
+            >
+              <Icon name="lucide:github" />
+            </a>
+          )
+        }
+        {
+          website && (
+            <a
+              href={website}
+              target="_blank"
+              title="Visitar web"
+              class="rounded-full flex items-center justify-center size-10 transition-colors hover:bg-white/10"
+            >
+              <Icon name="lucide:external-link" />
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

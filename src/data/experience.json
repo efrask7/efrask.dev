@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Soriano Sports",
+    "description": "Proyecto web desarrollado como trabajo final en UTU, enfocado en eventos y noticias deportivas locales. Lideré el equipo y demostré habilidades en gestión y desarrollo web.",
+    "github": "https://github.com/sorianosports23",
+    "website": "https://deportes.soriano.gub.uy",
+    "skills": ["Html", "CSS", "Typescript", "React", "Php", "PostgreSQL"],
+    "time": ["Junio de 2023", "Diciembre de 2023"]
+  },
+  {
+    "name": "Intendencia de Soriano",
+    "description": "Desarrollador de software trabajando en diversos proyectos utilizando múltiples tecnologías. Contribuyo al desarrollo y mantenimiento de aplicaciones web y sistemas internos.",
+    "skills": ["Html", "CSS", "Javascript", "Typescript", "NodeJS", "Astro", "MySQL", "PostgreSQL", "Php", "NestJS", "NextJS"],
+    "time": ["Marzo de 2024", "Actualidad"]
+  }
+]

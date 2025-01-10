@@ -1,0 +1,20 @@
+---
+import SectionCard from "./SectionCard.astro";
+import experience from "../../data/experience.json";
+import ExperienceCard from "./ExperienceCard.astro";
+---
+
+<SectionCard title="Experiencia">
+  <div class="flex flex-col gap-2 relative">
+    {
+      experience
+        .toReversed()
+        .map((data, i) => <ExperienceCard {...data} index={i} />)
+    }
+
+    <div
+      class="hidden md:inline w-[.15rem] h-full absolute left-[50%] -translate-x-[50%] bg-custom"
+    >
+    </div>
+  </div>
+</SectionCard>

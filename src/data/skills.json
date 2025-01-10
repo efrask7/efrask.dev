@@ -1,0 +1,78 @@
+[
+  {
+    "title": "Html",
+    "icon": "html.svg"
+  },
+  {
+    "title": "CSS",
+    "icon": "css.svg"
+  },
+  {
+    "title": "Javascript",
+    "icon": "js.svg"
+  },
+  {
+    "title": "Typescript",
+    "icon": "ts.svg"
+  },
+  {
+    "title": "Tailwind",
+    "icon": "tailwind.svg"
+  },
+  {
+    "title": "React",
+    "icon": "react.svg"
+  },
+  {
+    "title": "Vite",
+    "icon": "vite.svg"
+  },
+  {
+    "title": "Astro",
+    "icon": "astro.svg"
+  },
+  {
+    "title": "NodeJS",
+    "icon": "nodejs.svg"
+  },
+  {
+    "title": "Express",
+    "icon": "expressjs.svg"
+  },
+  {
+    "title": "NestJS",
+    "icon": "nestjs.svg"
+  },
+  {
+    "title": "NextJS",
+    "icon": "nextjs.svg"
+  },
+  {
+    "title": "Electron",
+    "icon": "electron.svg"
+  },
+  {
+    "title": "Prisma",
+    "icon": "prisma.svg"
+  },
+  {
+    "title": "PostgreSQL",
+    "icon": "pgsql.svg"
+  },
+  {
+    "title": "MongoDB",
+    "icon": "mongodb.svg"
+  },
+  {
+    "title": "MySQL",
+    "icon": "mysql.svg"
+  },
+  {
+    "title": "Php",
+    "icon": "php.svg"
+  },
+  {
+    "title": "SocketIO",
+    "icon": "socketio.svg"
+  }
+]
