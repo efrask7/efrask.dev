@@ -1,0 +1,75 @@
+---
+import { Icon } from "astro-icon/components";
+import mySkills from "../../data/skills.json";
+import ImagesCarrousel from "./ImagesCarrousel";
+const { name, description, technologies, github, website, imagesPath, images } =
+  Astro.props as {
+    name: string;
+    description: string;
+    technologies: string[];
+    github: string;
+    website?: string;
+    imagesPath: string;
+    images: string[];
+  };
+---
+
+<div
+  class="border border-custom2 rounded-md px-4 py-2 flex flex-col gap-2 w-full"
+>
+  <h3 class="text-center
+  text-xl
+  uppercase
+  tracking-wide
+  font-bold">
+    {name}
+  </h3>
+  <p class="bg-white/10 px-2 py-3 rounded-md">{description}</p>
+
+  <ImagesCarrousel path={imagesPath} images={images} client:load />
+
+  <div class="flex flex-col gap-2">
+    <div
+      class="flex gap-1 justify-center bg-white/10 py-2 rounded-md flex-wrap"
+    >
+      {
+        technologies.map((skill) => (
+          <img
+            src={`/icons/${mySkills.find((s) => s.title.toLowerCase() === skill.toLowerCase())?.icon}`}
+            alt={skill}
+            class="size-10"
+          />
+        ))
+      }
+    </div>
+
+    <div class="flex items-center flex-col gap-1">
+      {
+        github && (
+          <a
+            href={github}
+            target="_blank"
+            title="Visitar repositorio"
+            class="rounded-full flex items-center justify-center gap-1 px-2 py-1 text-btns transition-colors hover:bg-white/10"
+          >
+            <Icon name="lucide:github" class="mt-1" />
+            Github
+          </a>
+        )
+      }
+      {
+        website && (
+          <a
+            href={website}
+            target="_blank"
+            title="Visitar web"
+            class="rounded-full flex items-center justify-center gap-1 px-2 py-1 text-btns transition-colors hover:bg-white/10"
+          >
+            <Icon name="lucide:external-link" class="mt-1" />
+            Visitar web
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>

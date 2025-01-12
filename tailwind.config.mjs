@@ -6,6 +6,7 @@ export default {
 			colors: {
 				'custom': '#f33ba4',
 				'custom2': '#f5c39c',
+				'custom2-1': '#e66429',
 				'title': '#dd7738',
 				'btns': '#f5c39c'
 			}
