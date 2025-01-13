@@ -2,6 +2,7 @@
 import ClientRouter from "astro/components/ClientRouter.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Snow from "../components/Snow";
 ---
 
 <!doctype html>
@@ -15,11 +16,13 @@ import Footer from "../components/Footer.astro";
 		<ClientRouter />
 	</head>
 	<body class="bg-[#1a1a1a] size-full flex flex-col gap-2 items-center">
-		<Header />
+		<!-- <Header /> -->
 
 		<main class="flex px-4 mt-12 py-2 flex-col gap-6 w-full lg:w-[52rem]">
 			<slot />
 		</main>
+
+		<Snow client:only />
 
 		<Footer />
 	</body>

@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import mySkills from "../../data/skills.json";
 import ImagesCarrousel from "../react/ImagesCarrousel";
+import SkillWithTooltip from "../SkillWithTooltip.astro";
 const { name, description, technologies, github, website, imagesPath, images } =
   Astro.props as {
     name: string;
@@ -15,13 +16,15 @@ const { name, description, technologies, github, website, imagesPath, images } =
 ---
 
 <div
-  class="border border-custom2 rounded-md px-4 py-2 flex flex-col gap-2 w-full"
+  class="shadow shadow-custom2 rounded-md px-4 py-2 flex flex-col gap-2 w-full bg-[#1a1a1a]"
 >
-  <h3 class="text-center
+  <h3
+    class="text-center
   text-xl
   uppercase
   tracking-wide
-  font-bold">
+  font-bold bg-white/10 py-1 rounded-md"
+  >
     {name}
   </h3>
   <p class="bg-white/10 px-2 py-3 rounded-md">{description}</p>
@@ -34,10 +37,13 @@ const { name, description, technologies, github, website, imagesPath, images } =
     >
       {
         technologies.map((skill) => (
-          <img
-            src={`/icons/${mySkills.find((s) => s.title.toLowerCase() === skill.toLowerCase())?.icon}`}
-            alt={skill}
-            class="size-10"
+          <SkillWithTooltip
+            title={skill}
+            icon={
+              mySkills.find(
+                (s) => s.title.toLowerCase() === skill.toLowerCase(),
+              )?.icon
+            }
           />
         ))
       }

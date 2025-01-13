@@ -1,6 +1,6 @@
 [
   {
-    "name": "Biblioteca",
+    "name": "Gestion de Biblioteca",
     "description": "Este proyecto es una aplicación de escritorio para gestionar la biblioteca del Liceo Palmar. Permite realizar operaciones como agregar, editar, eliminar y buscar libros, así como gestionar los préstamos de los mismos, guardando los registros en una base SQLite.",
     "technologies": ["React", "Electron", "NodeJS", "Tailwind", "Typescript"],
     "github": "https://github.com/efrask7/biblioteca_liceo-palmar",

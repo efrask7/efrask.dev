@@ -1,11 +1,14 @@
 ---
-const { href, target } = Astro.props;
+const { href, target, showBg = true } = Astro.props;
 ---
 
 <a
   href={href}
   target={target}
-  class="flex items-center gap-1 text-btns hover:text-btns/90 bg-black/50 px-2 py-1 rounded-lg"
+  class:list={[
+    "flex items-center gap-1 text-btns hover:text-btns/90 px-2 py-1 rounded-lg",
+    { "bg-black/50": showBg },
+  ]}
 >
   <slot />
 </a>

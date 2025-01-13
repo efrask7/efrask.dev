@@ -4,6 +4,8 @@ import 'swiper/css'
 import 'swiper/css/effect-cards'
 import ImgViewer from "./ImgViewer"
 import { useState } from "react"
+import { BsArrowLeft, BsArrowLeftCircle, BsArrowRight, BsArrowRightCircle, BsThreeDots } from "react-icons/bs"
+import { PiHandGrabbingFill } from "react-icons/pi"
 
 interface IImagesCarrouselProps {
   path: string
@@ -41,8 +43,8 @@ export default function ImagesCarrousel({ path, images }: IImagesCarrouselProps)
             <SwiperSlide key={i}>
               <img
                 src={`/proyects/${path}/${image}`}
-                alt="asd"
-                className="rounded-md"
+                alt={image}
+                className="rounded-md cursor-grab"
                 onClick={() => setImgViewerProps({
                   src: `/proyects/${path}/${image}`,
                   open: true
@@ -52,6 +54,14 @@ export default function ImagesCarrousel({ path, images }: IImagesCarrouselProps)
           ))
         }
       </Swiper>
+
+      <div className="py-2 flex justify-center gap-2 text-4xl relative ">
+        <BsArrowLeft className="animate-pulse" />
+        <BsThreeDots />
+        <BsThreeDots />
+        <BsArrowRight className="animate-pulse" />
+        <PiHandGrabbingFill className="absolute -translate-x-[40%] opacity-90 text-3xl text-black/80 animate-bounce-horizontal" />
+      </div>
 
       <ImgViewer
         img={imgViewerProps.src}

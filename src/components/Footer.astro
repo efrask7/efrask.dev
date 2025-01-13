@@ -9,17 +9,21 @@ import ContactLink from "./ContactLink.astro";
   </p>
 
   <nav class="flex gap-2 flex-wrap justify-center">
-    <ContactLink href="mailto:efrainschettini@gmail.com">
+    <ContactLink href="mailto:efrainschettini@gmail.com" showBg={false}>
       <Icon name="lucide:mail" class="mt-1" />
       efrainschettini@gmail.com
     </ContactLink>
 
-    <ContactLink href="mailto:contacto@efrask.dev">
+    <ContactLink href="mailto:contacto@efrask.dev" showBg={false}>
       <Icon name="lucide:mail" class="mt-1" />
       contacto@efrask.dev
     </ContactLink>
 
-    <ContactLink href="https://github.com/efrask7" target="_blank">
+    <ContactLink
+      href="https://github.com/efrask7"
+      target="_blank"
+      showBg={false}
+    >
       <Icon name="lucide:github" class="mt-1" />
       / efrask7
     </ContactLink>

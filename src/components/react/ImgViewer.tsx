@@ -15,6 +15,7 @@ export default function ImgViewer({ opened, img, onClose }: IImgViewerProps) {
           onClose()
         }
       }}
+      onClick={() => onClose()}
       tabIndex={opened ? 1 : -1}
     >
       <button className="absolute top-0 right-0 -translate-x-8 translate-y-4 bg-custom rounded-full p-1 text-xl" onClick={onClose}>
