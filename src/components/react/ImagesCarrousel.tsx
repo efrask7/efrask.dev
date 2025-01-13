@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCards } from "swiper/modules"
 import 'swiper/css'
 import 'swiper/css/effect-cards'
-import ImgViewer from "../ImgViewer"
+import ImgViewer from "./ImgViewer"
 import { useState } from "react"
 
 interface IImagesCarrouselProps {

@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+import ContactLink from "./ContactLink.astro";
+---
+
+<footer class="w-full px-4 py-6 flex items-center flex-col gap-2">
+  <p class="text-title">
+    efrask.dev © {new Date().getFullYear()}, Built with Astro :)
+  </p>
+
+  <nav class="flex gap-2 flex-wrap justify-center">
+    <ContactLink href="mailto:efrainschettini@gmail.com">
+      <Icon name="lucide:mail" class="mt-1" />
+      efrainschettini@gmail.com
+    </ContactLink>
+
+    <ContactLink href="mailto:contacto@efrask.dev">
+      <Icon name="lucide:mail" class="mt-1" />
+      contacto@efrask.dev
+    </ContactLink>
+
+    <ContactLink href="https://github.com/efrask7" target="_blank">
+      <Icon name="lucide:github" class="mt-1" />
+      / efrask7
+    </ContactLink>
+  </nav>
+</footer>
