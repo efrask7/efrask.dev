@@ -74,5 +74,21 @@
   {
     "title": "SocketIO",
     "icon": "socketio.svg"
+  },
+  {
+    "title": "Ejs",
+    "icon": "ejs.svg"
+  },
+  {
+    "title": "Bootstrap",
+    "icon": "bootstrap.svg"
+  },
+  {
+    "title": "Sequelize",
+    "icon": "sequelize.svg"
+  },
+  {
+    "title": "SQLite",
+    "icon": "sqlite.svg"
   }
 ]

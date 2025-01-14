@@ -16,7 +16,7 @@
   {
     "name": "Intendencia de Soriano",
     "description": "Desarrollador de software trabajando en diversos proyectos utilizando múltiples tecnologías. Contribuyo al desarrollo y mantenimiento de aplicaciones web y sistemas internos.",
-    "skills": ["Html", "CSS", "Javascript", "Typescript", "NodeJS", "MySQL", "PostgreSQL", "Php", "NestJS", "NextJS"],
+    "skills": ["Html", "CSS", "Javascript", "Typescript", "NodeJS", "MySQL", "PostgreSQL", "Php", "NestJS", "NextJS", "Bootstrap"],
     "time": ["Marzo de 2024", "Actualidad"]
   }
 ]

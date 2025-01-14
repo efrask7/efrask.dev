@@ -14,6 +14,8 @@ interface IImagesCarrouselProps {
 
 export default function ImagesCarrousel({ path, images }: IImagesCarrouselProps) {
 
+  console.log(path, images)
+
   const [imgViewerProps, setImgViewerProps] = useState({
     open: false,
     src: ''
@@ -36,7 +38,7 @@ export default function ImagesCarrousel({ path, images }: IImagesCarrouselProps)
         modules={[EffectCards]}
         effect="cards"
         slidesPerView={1}
-        className="w-[90%] m-auto"
+        className="w-[90%] m-auto max-h-[26rem]"
       >
         {
           images.map((image, i) => (
@@ -55,12 +57,12 @@ export default function ImagesCarrousel({ path, images }: IImagesCarrouselProps)
         }
       </Swiper>
 
-      <div className="py-2 flex justify-center gap-2 text-4xl relative ">
+      <div className="py-2 flex justify-center gap-2 text-4xl relative z-10 bg-black/50 rounded-full w-fit px-4 m-auto">
         <BsArrowLeft className="animate-pulse" />
         <BsThreeDots />
         <BsThreeDots />
         <BsArrowRight className="animate-pulse" />
-        <PiHandGrabbingFill className="absolute -translate-x-[40%] opacity-90 text-3xl text-black/80 animate-bounce-horizontal" />
+        <PiHandGrabbingFill className="absolute -translate-x-[40%] opacity-90 text-3xl text-custom animate-bounce-horizontal" />
       </div>
 
       <ImgViewer
