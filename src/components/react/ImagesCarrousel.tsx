@@ -14,8 +14,6 @@ interface IImagesCarrouselProps {
 
 export default function ImagesCarrousel({ path, images }: IImagesCarrouselProps) {
 
-  console.log(path, images)
-
   const [imgViewerProps, setImgViewerProps] = useState({
     open: false,
     src: ''
