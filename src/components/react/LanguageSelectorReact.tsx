@@ -10,10 +10,10 @@ export default function LanguageSelectorReact({ lang, langs }: ILanguageSelector
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="relative">
+    <div className="relative group">
       <button
         onClick={() => setOpen(prev => !prev)}
-        className={`flex items-center gap-1 text-custom2 border border-custom2 px-2 rounded-sm hover:bg-custom2/20 ${open ? 'bg-custom2 text-black rounded-br-none hover:text-white' : ''}`}
+        className={`flex items-center gap-1  border border-custom2 px-2 rounded-sm hover:bg-custom2/20 ${open ? 'bg-custom2 text-black rounded-br-none hover:text-white' : 'text-custom2'}`}
       >
         <BsCaretDownFill
           className={`transform transition-transform ${open ? 'rotate-0' : '-rotate-90'}`}
