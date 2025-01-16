@@ -1,5 +1,13 @@
+import getSupportedLangs from "./lang"
+
 export default async function getTextI18(lang: string, title: string) {
-  const langToUse = lang || 'es'
+  let langToUse = lang || 'es'
+
+  const supportedLanguages = getSupportedLangs().map(lang => lang.params.lang)
+
+  if (!supportedLanguages.includes(langToUse)) {
+    langToUse = 'es'
+  }
 
   const texts = await import(`../language/${langToUse}/general.json`) as {
     [key: string]: string

@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import Skills from "../../components/index/Skills.astro";
 import Timeline from "../../components/index/Experience.astro";
 import Welcome from "../../components/index/Welcome.astro";
@@ -6,8 +7,16 @@ import Layout from "../../layouts/Layout.astro";
 import FeaturedProjects from "../../components/index/FeaturedProjects.astro";
 import getSupportedLangs from "../../utils/lang";
 
+const supportedLangs = getSupportedLangs();
+
 export function getStaticPaths() {
   return getSupportedLangs();
+}
+
+const { lang } = Astro.params;
+
+if (!supportedLangs.map((l) => l.params.lang).includes(lang)) {
+  Astro.redirect("/es");
 }
 ---
 

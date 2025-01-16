@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import getSupportedLangs from "../utils/lang";
+
+const supportedLangs = getSupportedLangs();
+
+export function getStaticPaths() {
+  return supportedLangs;
+}
+
+const { lang } = Astro.params;
+
+if (!supportedLangs.map((l) => l.params.lang).includes(lang)) {
+  Astro.redirect("/es");
+}
+---
+
+<Layout>
+  <div class="flex flex-col gap-2 items-center">
+    <img
+      src="https://http.cat/images/404.jpg"
+      alt="Cat 404"
+      class="w-96 rounded-lg"
+    />
+  </div>
+</Layout>
