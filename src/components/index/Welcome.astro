@@ -1,6 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
 import ContactLink from "../ContactLink.astro";
+import getTextI18 from "../../utils/getTexti18";
+
+const { lang } = Astro.params as {
+  lang: string;
+};
+
+const subtitle = await getTextI18(lang, "subtitle");
 ---
 
 <div class="flex gap-2 flex-col items-center relative">
@@ -15,7 +22,7 @@ import ContactLink from "../ContactLink.astro";
     >
       Efraín Schettini
     </h1>
-    <p class="text-xl tracking-wide text-center">Desarrollador Full Stack</p>
+    <p class="text-xl tracking-wide text-center">{subtitle}</p>
   </div>
 
   <div

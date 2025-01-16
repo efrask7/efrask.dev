@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import mySkills from "../../data/skills.json";
 import ImagesCarrousel from "../react/ImagesCarrousel";
 import SkillWithTooltip from "../SkillWithTooltip.astro";
+import getTextI18 from "../../utils/getTexti18";
 const { name, description, technologies, github, website, imagesPath, images } =
   Astro.props as {
     name: string;
@@ -13,6 +14,13 @@ const { name, description, technologies, github, website, imagesPath, images } =
     imagesPath: string;
     images: string[];
   };
+
+const { lang } = Astro.params as {
+  lang: string;
+};
+
+const visit_web = await getTextI18(lang, "visit_web_btn");
+const visit_repo = await getTextI18(lang, "visit_git_btn");
 ---
 
 <div
@@ -55,7 +63,7 @@ const { name, description, technologies, github, website, imagesPath, images } =
           <a
             href={github}
             target="_blank"
-            title="Visitar repositorio"
+            title={visit_repo}
             class="rounded-full flex items-center justify-center gap-1 px-2 py-1 text-btns transition-colors hover:bg-white/10"
           >
             <Icon name="lucide:github" class="mt-1" />
@@ -68,11 +76,11 @@ const { name, description, technologies, github, website, imagesPath, images } =
           <a
             href={website}
             target="_blank"
-            title="Visitar web"
+            title={visit_web}
             class="rounded-full flex items-center justify-center gap-1 px-2 py-1 text-btns transition-colors hover:bg-white/10"
           >
             <Icon name="lucide:external-link" class="mt-1" />
-            Visitar web
+            {visit_web}
           </a>
         )
       }

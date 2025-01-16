@@ -1,0 +1,10 @@
+---
+import langlabel from "../utils/langlabel";
+import LanguageSelectorReact from "./react/LanguageSelectorReact";
+
+const { lang } = Astro.params as {
+  lang: string;
+};
+---
+
+<LanguageSelectorReact lang={lang} langs={langlabel} client:only />

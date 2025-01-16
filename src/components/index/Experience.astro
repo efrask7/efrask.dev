@@ -1,10 +1,19 @@
 ---
 import SectionCard from "./SectionCard.astro";
-import experience from "../../data/experience.json";
 import ExperienceCard from "./ExperienceCard.astro";
+import getTextI18 from "../../utils/getTexti18";
+import getExperience from "../../utils/getExperience";
+
+const { lang } = Astro.params as {
+  lang: string;
+};
+
+const section_title = await getTextI18(lang, "experience");
+
+const experience = await getExperience(lang);
 ---
 
-<SectionCard title="Experiencia">
+<SectionCard title={section_title}>
   <div class="flex flex-col gap-2 relative">
     {
       experience

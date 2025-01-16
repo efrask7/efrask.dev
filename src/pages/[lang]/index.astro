@@ -1,0 +1,19 @@
+---
+import Skills from "../../components/index/Skills.astro";
+import Timeline from "../../components/index/Experience.astro";
+import Welcome from "../../components/index/Welcome.astro";
+import Layout from "../../layouts/Layout.astro";
+import FeaturedProjects from "../../components/index/FeaturedProjects.astro";
+import getSupportedLangs from "../../utils/lang";
+
+export function getStaticPaths() {
+  return getSupportedLangs();
+}
+---
+
+<Layout>
+  <Welcome />
+  <Skills />
+  <Timeline />
+  <FeaturedProjects />
+</Layout>

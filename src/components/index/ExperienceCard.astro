@@ -11,8 +11,16 @@ interface IExperienceCardProps {
 
 import { Icon } from "astro-icon/components";
 import mySkills from "../../data/skills.json";
+import getTextI18 from "../../utils/getTexti18";
 const { name, description, skills, time, github, website, index } =
   Astro.props as IExperienceCardProps;
+
+const { lang } = Astro.params as {
+  lang: string;
+};
+
+const visit_btn = await getTextI18(lang, "visit_web_btn");
+const visit_repo_btn = await getTextI18(lang, "visit_git_btn");
 ---
 
 <section
@@ -65,7 +73,7 @@ const { name, description, skills, time, github, website, index } =
             <a
               href={github}
               target="_blank"
-              title="Visitar repositorio"
+              title={visit_repo_btn}
               class="rounded-full flex items-center justify-center size-10 transition-colors hover:bg-white/10"
             >
               <Icon name="lucide:github" />
@@ -77,7 +85,7 @@ const { name, description, skills, time, github, website, index } =
             <a
               href={website}
               target="_blank"
-              title="Visitar web"
+              title={visit_btn}
               class="rounded-full flex items-center justify-center size-10 transition-colors hover:bg-white/10"
             >
               <Icon name="lucide:external-link" />

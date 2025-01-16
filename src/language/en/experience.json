@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Soriano Sports",
+    "description": "Web project developed as a final work at UTU, focused on departmental sports events and news. The platform allows the creation of activities and sports places, as well as online registration. It also offers tools for website management through an admin user and the possibility of registration for new users. I led the team, demonstrating skills in management and web development.",
+    "github": "https://github.com/sorianosports23",
+    "website": "https://deportes.soriano.gub.uy",
+    "skills": ["Html", "CSS", "Typescript", "React", "Php", "PostgreSQL"],
+    "time": ["June 2023", "December 2023"]
+  },
+  {
+    "name": "RCInformatica",
+    "description": "Developed a custom electronic billing application with React. It allows managing companies, viewing, handling receipts, electronic reports, receiving important notifications, uploading certificates and CAEs with an intuitive, simple, and responsive user interface, facilitating efficient management of electronic billing. Additionally, it handles multiple databases with a backend based on API developed using PHP.",
+    "skills": ["Html", "CSS", "Javascript", "Typescript", "React", "Php", "MySQL"],
+    "time": ["October", "November 2023", "January", "February 2024"]
+  },
+  {
+    "name": "Intendencia de Soriano",
+    "description": "Software developer working on various projects using multiple technologies. I contribute to the development and maintenance of web applications and internal systems.",
+    "skills": ["Html", "CSS", "Javascript", "Typescript", "NodeJS", "MySQL", "PostgreSQL", "Php", "NestJS", "NextJS", "Bootstrap"],
+    "time": ["March 2024", "Present"]
+  }
+]

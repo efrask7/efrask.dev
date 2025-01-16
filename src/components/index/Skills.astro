@@ -2,9 +2,16 @@
 import SectionCard from "./SectionCard.astro";
 import skills from "../../data/skills.json";
 import SkillWithTooltip from "../SkillWithTooltip.astro";
+import getTextI18 from "../../utils/getTexti18";
+
+const { lang } = Astro.params as {
+  lang: string;
+};
+
+const section_title = await getTextI18(lang, "tech");
 ---
 
-<SectionCard title="Tecnologías">
+<SectionCard title={section_title}>
   <div class="flex flex-wrap gap-2 justify-center">
     {skills.map((skill) => <SkillWithTooltip {...skill} />)}
   </div>
