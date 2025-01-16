@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import getSupportedLangs from "../../utils/lang";
+
+export function getStaticPaths() {
+  return getSupportedLangs();
+}
+---
+
+<Layout> hola </Layout>

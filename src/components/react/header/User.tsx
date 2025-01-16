@@ -1,25 +1,38 @@
 import { useEffect, useState } from "react"
+import getTextI18 from "../../../utils/getTexti18"
 
-export default function UserHeader() {
+interface IUserHeadersProps {
+  lang: string
+}
+
+export default function UserHeader({ lang }: IUserHeadersProps) {
 
   const url = window.location.pathname
-  const [show, setShow] = useState(url !== '/')
+  const [show, setShow] = useState(url !== `/${lang}` && url !== `/${lang}/`)
 
   useEffect(() => {
-    if (url === '/') {
-      window.addEventListener('scroll', () => {
-        const rect = document.getElementById('Tecnologías')?.getBoundingClientRect()
+    (async () => {
+      if (url === `/${lang}` || url === `/${lang}/`) {
+        const tech_title = await getTextI18(lang, 'tech')
 
-        if (rect) {
-          const top = rect.height * 2
-          const actualY = window.scrollY
+        const rect = document.getElementById(tech_title)?.getBoundingClientRect()
+        function setShowScroll() {
+          if (rect) {
+            const top = rect.height * 2
+            const actualY = window.scrollY
 
-          setShow(actualY > top)
+            setShow(actualY > top)
+          }
         }
-      })
 
-      return () => window.removeEventListener('scroll', () => { })
-    }
+        window.addEventListener('scroll', () => {
+          setShowScroll()
+        })
+
+        setShowScroll()
+      }
+    })()
+    return () => window.removeEventListener('scroll', () => { })
   }, [])
 
   return (

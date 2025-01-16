@@ -23,7 +23,7 @@ const projects = await getTextI18(lang, "projects");
   </nav>
 
   <div class="flex items-center gap-2">
-    <UserHeader client:only />
+    <UserHeader lang={lang} client:only />
     <LanguageSelector />
   </div>
 </header>
