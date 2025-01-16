@@ -25,7 +25,7 @@ export default function LanguageSelectorReact({ lang, langs }: ILanguageSelector
           {Object.keys(langs).map((l) => (
             <a
               key={l}
-              href={`/${l}/${location.pathname.split('/')[2]}`}
+              href={`/${l}/${location.pathname.split('/')[2] ?? ''}`}
               className="hover:text-black/80 px-6 py-1 hover:bg-custom2/30 hover:text-white bg-custom2"
             >
               {langs[l]}

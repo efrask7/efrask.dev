@@ -7,6 +7,7 @@ import react from '@astrojs/react';
 
 import icon from 'astro-icon';
 import node from '@astrojs/node'
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,6 +26,19 @@ export default defineConfig({
       include: {
         lucide: ["*"], // (Default) Loads entire Material Design Icon set
       },
+    }),
+    sitemap({
+      i18n: {
+        defaultLocale: 'es',
+        locales: {
+          es: 'es-UY',
+          en: 'en-US'
+        }
+      },
+      customPages: [
+        'https://efrask.dev/projects',
+      ]
     })
-  ]
+  ],
+  site: 'https://efrask.dev'
 });
