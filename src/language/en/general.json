@@ -7,5 +7,7 @@
   "visit_git_btn": "Visit repository",
   "page_title": "efrask.dev | Web Development and Software Solutions",
   "page_description": "Personal portfolio of Efrain Schettini, Full Stack web developer",
-  "projects": "Projects"
+  "projects": "Projects",
+  "projects_not_found": "Can't find any projects :(. Try again later.",
+  "view_more": "View more"
 }

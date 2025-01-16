@@ -1,0 +1,63 @@
+---
+export const prerender = false;
+
+import { marked } from "marked";
+import getRepoData from "../../../actions/getRepoData";
+import Layout from "../../../layouts/Layout.astro";
+import getSupportedLangs from "../../../utils/lang";
+import SectionCard from "../../../components/index/SectionCard.astro";
+import ProjectCard from "../../../components/projects/ProjectCard.astro";
+
+const repos_cookie = Astro.cookies.get("projects");
+
+if (!repos_cookie) {
+  return {
+    redirect: {
+      destination: `/${lang}/projects`,
+      permanent: false,
+    },
+  };
+}
+
+const repos_name = JSON.parse(repos_cookie.value) as string[];
+
+export function getStaticPaths() {
+  const langs = getSupportedLangs();
+
+  return langs.map((langParams) => {
+    return repos_name.map((repo) => {
+      return {
+        params: {
+          lang: langParams.params.lang,
+          repo,
+        },
+      };
+    });
+  });
+}
+
+const { lang, repo } = Astro.params;
+
+const project = await getRepoData(repo);
+
+if (!project) {
+  return {
+    redirect: {
+      destination: `/${lang}/projects`,
+      permanent: false,
+    },
+  };
+}
+
+const markdownHtml = marked(project.readme);
+---
+
+<Layout>
+  <ProjectCard {...project} hideMore />
+
+  <SectionCard title="readme.md">
+    <div class="px-4 py-2 rounded-lg flex flex-col gap-2">
+      <Fragment set:html={markdownHtml} />
+    </div>
+  </SectionCard>
+</Layout>

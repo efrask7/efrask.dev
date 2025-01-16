@@ -37,7 +37,7 @@ export default function UserHeader({ lang }: IUserHeadersProps) {
 
   return (
     <div className={`flex items-center gap-1 ${show ? 'opacity-100 cursor-pointer pointer-events-auto' : 'opacity-0 cursor-none pointer-events-none'} transition-opacity`}>
-      <a href="/" className="text-btns">efrask.dev</a>
+      <a href={`/${lang}`} className="text-btns">efrask.dev</a>
       <img
         src="https://avatars.githubusercontent.com/efrask7"
         alt="efrask7"
