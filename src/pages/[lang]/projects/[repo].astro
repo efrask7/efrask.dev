@@ -7,6 +7,7 @@ import Layout from "../../../layouts/Layout.astro";
 import getSupportedLangs from "../../../utils/lang";
 import SectionCard from "../../../components/index/SectionCard.astro";
 import ProjectCard from "../../../components/projects/ProjectCard.astro";
+import ProjectMD from "../../../ignoretailwind/components/ProjectMD.astro";
 
 const repos_cookie = Astro.cookies.get("projects");
 
@@ -57,7 +58,7 @@ const markdownHtml = marked(project.readme);
 
   <SectionCard title="readme.md">
     <div class="px-4 py-2 rounded-lg flex flex-col gap-2">
-      <Fragment set:html={markdownHtml} />
+      <ProjectMD content={markdownHtml} />
     </div>
   </SectionCard>
 </Layout>

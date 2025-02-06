@@ -16,3 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 .font-raleway {
   font-family: 'Raleway', sans-serif;
 }
+
+@layer base {
+  .no-tailwind * {
+    all: inherit;
+  }
+}
