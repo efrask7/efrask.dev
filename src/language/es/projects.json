@@ -12,7 +12,6 @@
     "description": "Aplicación en tiempo real que permite a múltiples usuarios dibujar simultáneamente. Esta plataforma colaborativa está diseñada para facilitar la creatividad y la comunicación visual entre los usuarios, permitiéndoles trabajar juntos en un canvas compartido desde cualquier lugar del mundo. La aplicación no permite la creación de salas, sino que todos los usuarios comparten un único canvas.",
     "technologies": ["React", "NodeJS", "SocketIo", "Tailwind", "Typescript", "NextJS", "Express"],
     "github": "https://github.com/efrask7/draw2gether",
-    "website": "https://draw2gether.efrask.dev",
     "imagesPath": "d2g",
     "images": ["login.jpg", "main.jpg", "draw.jpg", "line.jpg", "square.jpg"]
   },
@@ -21,7 +20,6 @@
     "description": "Este proyecto es una aplicación web que permite a los usuarios ver videos de YouTube de manera sincronizada en salas compartidas. Los usuarios pueden crear salas privadas o públicas y chatear en tiempo real mientras disfrutan de los videos. La aplicación incluye funciones para reproducir videos, guardar el historial, y administrar la sala con opciones avanzadas para administradores. Además, cuenta con un sistema de autenticación y autorización de usuarios, y guarda el estado de la sala, permitiendo que los usuarios retomen desde donde dejaron al reconectarse.",
     "technologies": ["Html", "Css", "Javascript", "Express", "SocketIo", "Sqlite", "Ejs", "Sequelize", "Bootstrap"],
     "github": "https://github.com/efrask7/videos2gether",
-    "website": "https://videos2gether.efrask.dev",
     "imagesPath": "v2g",
     "images": ["login.jpg", "main.jpg", "room.jpg", "search.jpg", "main_mobile.jpg", "room_mobile.jpg", "chat.jpg"]
   }
