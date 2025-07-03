@@ -1,6 +1,7 @@
 # efrask.dev
+> Ver este archivo en: [Español](./README.md) | [English](./README_EN.md)
 
-Mi portafolio desarrollado con [Astro](https://astro.build) y [React](https://es.react.dev/) :].
+Mi portafolio desarrollado con [Astro](https://astro.build) y [React](https://es.react.dev/) :).
 
 ## 🌐 Sitio web
 
@@ -29,3 +30,10 @@ npm install
 ```bash
 npm run dev
 ```
+
+## 📦 Recursos utilizados
+
+- [Astro Icon (Lucide)](https://www.astroicon.dev/) — Iconos para Astro.
+- [Google Fonts (Raleway y Montserrat)](https://fonts.google.com/share?selection.family=Montserrat:ital,wght@0,100..900;1,100..900|Raleway:ital,wght@0,100..900;1,100..900) - Fuentes de texto utilizadas.
+- [React Snowfall](https://www.npmjs.com/package/react-snowfall) - Componente que crea el efecto de nieve en el fondo.
+- [Swiper](https://swiperjs.com/) - Libreria utilizada para los carruseles de proyectos.
