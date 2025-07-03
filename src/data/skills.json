@@ -90,5 +90,9 @@
   {
     "title": "SQLite",
     "icon": "sqlite.svg"
+  },
+  {
+    "title": "GraphQL",
+    "icon": "graphql.svg"
   }
 ]
