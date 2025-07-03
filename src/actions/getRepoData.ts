@@ -8,6 +8,16 @@ export default async function getRepoData(repo: string) {
     if (!res.id) return false
 
     const raw_req = await fetch(`https://raw.githubusercontent.com/efrask7/${repo}/${res.default_branch}/readme.md`)
+
+    if (raw_req.status === 404) {
+      const readme_req = await fetch(`https://raw.githubusercontent.com/efrask7/${repo}/${res.default_branch}/README.md`)
+      const readme_res = await readme_req.text()
+      return {
+        ...res,
+        readme: readme_res
+      }
+    }
+
     const res_raw = await raw_req.text()
 
     return {
