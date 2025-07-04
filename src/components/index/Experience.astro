@@ -17,7 +17,8 @@ const experience = await getExperience(lang);
   <div class="flex flex-col gap-2 relative">
     {
       experience
-        .toReversed()
+        .slice()
+        .reverse()
         .map((data, i) => <ExperienceCard {...data} index={i} />)
     }
 
