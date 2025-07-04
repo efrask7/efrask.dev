@@ -1,0 +1,27 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import getSupportedLangs from "../../../utils/lang";
+import RenderRepo from "../../../components/projects/RenderRepo";
+import getTextI18 from "../../../utils/getTexti18";
+
+export function getStaticPaths() {
+  return getSupportedLangs();
+}
+const { lang } = Astro.params as {
+  lang: string;
+};
+
+const visit_web = await getTextI18(lang, "visit_web_btn");
+const visit_repo = await getTextI18(lang, "visit_git_btn");
+const view_more = await getTextI18(lang, "view_more");
+---
+
+<Layout>
+  <RenderRepo
+    lang={lang}
+    visit_repo={visit_repo}
+    visit_web={visit_web}
+    view_more={view_more}
+    client:only
+  />
+</Layout>

@@ -1,4 +1,5 @@
 ---
+import Error404 from "../components/Error404.astro";
 import Layout from "../layouts/Layout.astro";
 import getSupportedLangs from "../utils/lang";
 
@@ -16,11 +17,5 @@ if (!supportedLangs.map((l) => l.params.lang).includes(lang)) {
 ---
 
 <Layout>
-  <div class="flex flex-col gap-2 items-center">
-    <img
-      src="https://http.cat/images/404.jpg"
-      alt="Cat 404"
-      class="w-96 rounded-lg"
-    />
-  </div>
+  <Error404 />
 </Layout>

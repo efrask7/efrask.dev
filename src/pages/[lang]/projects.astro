@@ -1,7 +1,7 @@
 ---
 export const prerender = false;
 import getGithubProjects from "../../actions/getGithubProjects";
-import ProjectCard from "../../components/projects/ProjectCard.astro";
+import ProjectCard from "../../components/projects/ProjectCard";
 import Layout from "../../layouts/Layout.astro";
 import getTextI18 from "../../utils/getTexti18";
 import getSupportedLangs from "../../utils/lang";
@@ -18,16 +18,17 @@ const projects = await getGithubProjects();
 
 const projects_filter = projects.filter((project) => project.description);
 
-Astro.cookies.set(
-  "projects",
-  JSON.stringify(projects_filter.map((project) => project.name)),
-  {
-    httpOnly: true,
-    sameSite: true,
-    secure: true,
-  },
-);
+const visit_web = await getTextI18(lang, "visit_web_btn");
+const visit_repo = await getTextI18(lang, "visit_git_btn");
+const view_more = await getTextI18(lang, "view_more");
 ---
+
+<script is:inline define:vars={{ projects }}>
+  localStorage.setItem(
+    "projects",
+    JSON.stringify(projects.map((project) => project.name)),
+  );
+</script>
 
 <Layout>
   <section>
@@ -47,7 +48,17 @@ Astro.cookies.set(
     }
 
     <div class="flex flex-wrap gap-6">
-      {projects_filter.map((project) => <ProjectCard {...project} />)}
+      {
+        projects_filter.map((project) => (
+          <ProjectCard
+            {...project}
+            lang={lang}
+            visit_web={visit_web}
+            visit_repo={visit_repo}
+            view_more={view_more}
+          />
+        ))
+      }
     </div>
   </section>
 </Layout>
