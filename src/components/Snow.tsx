@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-const Snowfall = lazy(() => import('react-snowfall').then(module => ({ default: module.default })))
+const Snowfall = lazy(() => import('react-snowfall'))
 
 export default function Snow() {
 
