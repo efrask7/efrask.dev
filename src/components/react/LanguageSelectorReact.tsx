@@ -16,7 +16,7 @@ export default function LanguageSelectorReact({ lang, langs }: ILanguageSelector
       const btn_lang = await getTextI18(lang, 'language_selector')
       setBtnTitle(btn_lang)
     })()
-  }, [])
+  }, [lang])
 
   return (
     <div className="relative group">
