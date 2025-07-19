@@ -10,13 +10,14 @@ const { lang } = Astro.params as {
 };
 
 const projects = await getTextI18(lang, "projects");
+const index = await getTextI18(lang, "index_page");
 ---
 
 <header
   class="w-[90%] m-auto lg:w-[52rem] flex items-center justify-between fixed top-2 z-50 bg-[#0a0a0a] px-4 py-2 rounded-xl shadow-sm shadow-slate-400/50"
 >
   <nav class="flex items-center gap-2 h-full">
-    <HeaderLink href={`/${lang ?? ""}`}>
+    <HeaderLink href={`/${lang ?? ""}`} title={index} show_title={false}>
       <Icon name="lucide:home" />
     </HeaderLink>
     <HeaderLink href={`${lang ? `/${lang}` : ""}/projects`} title={projects} />

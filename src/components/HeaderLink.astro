@@ -1,5 +1,5 @@
 ---
-const { href, title } = Astro.props;
+const { href, title, show_title = true } = Astro.props;
 ---
 
 <a
@@ -7,6 +7,6 @@ const { href, title } = Astro.props;
   title={title}
   class="hover:text-btns/75 text-btns cursor-pointer"
 >
-  {title}
+  {show_title && title}
   <slot />
 </a>
