@@ -63,7 +63,8 @@ export default function ProjectCard(props: IProjectCardsProps) {
               !props.hideMore && (
                 <a
                   href={`/${props.lang}/projects/repo?name=${props.name}`}
-                  className="text-white hover:bg-custom/60 bg-custom px-2 py-1 rounded-lg"
+                  className="text-white hover:bg-btns_icon/60 bg-btns_icon px-2 py-1 rounded-lg"
+                  title={props.view_more}
                 >
                   {props.view_more}
                 </a>

@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { BsCaretDownFill } from "react-icons/bs"
+import getTextI18 from "../../utils/getTexti18"
 
 interface ILanguageSelectorProps {
   lang: string
@@ -8,12 +9,21 @@ interface ILanguageSelectorProps {
 
 export default function LanguageSelectorReact({ lang, langs }: ILanguageSelectorProps) {
   const [open, setOpen] = useState(false)
+  const [btn_title, setBtnTitle] = useState('')
+
+  useEffect(() => {
+    (async () => {
+      const btn_lang = await getTextI18(lang, 'language_selector')
+      setBtnTitle(btn_lang)
+    })()
+  }, [])
 
   return (
     <div className="relative group">
       <button
         onClick={() => setOpen(prev => !prev)}
         className={`flex items-center gap-1  border border-custom2 px-2 rounded-sm hover:bg-custom2/20 ${open ? 'bg-custom2 text-black rounded-br-none hover:text-white' : 'text-custom2'}`}
+        title={btn_title}
       >
         <BsCaretDownFill
           className={`transform transition-transform ${open ? 'rotate-0' : '-rotate-90'}`}
@@ -27,6 +37,7 @@ export default function LanguageSelectorReact({ lang, langs }: ILanguageSelector
               key={l}
               href={`/${l}/${location.pathname.split('/')[2] ?? ''}`}
               className="hover:text-black/80 px-6 py-1 hover:bg-custom2/30 hover:text-white bg-custom2"
+              title={langs[l]}
             >
               {langs[l]}
             </a>
