@@ -2,7 +2,11 @@
 const { href, title } = Astro.props;
 ---
 
-<a href={href} class="hover:text-btns/75 text-btns cursor-pointer">
+<a
+  href={href}
+  title={title}
+  class="hover:text-btns/75 text-btns cursor-pointer"
+>
   {title}
   <slot />
 </a>

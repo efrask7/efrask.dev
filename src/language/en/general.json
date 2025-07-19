@@ -9,5 +9,7 @@
   "page_description": "Personal portfolio of Efrain Schettini, Full Stack web developer",
   "projects": "Projects",
   "projects_not_found": "Can't find any projects :(. Try again later.",
-  "view_more": "View more"
+  "view_more": "View more",
+  "index_page": "Go to index page",
+  "language_selector": "Select language"
 }

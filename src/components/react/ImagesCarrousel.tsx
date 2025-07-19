@@ -60,7 +60,7 @@ export default function ImagesCarrousel({ path, images }: IImagesCarrouselProps)
         <BsThreeDots />
         <BsThreeDots />
         <BsArrowRight className="animate-pulse" />
-        <PiHandGrabbingFill className="absolute -translate-x-[40%] opacity-90 text-3xl text-custom animate-bounce-horizontal" />
+        <PiHandGrabbingFill className="absolute -translate-x-[40%] opacity-90 text-3xl text-custom_icon animate-bounce-horizontal" />
       </div>
 
       <ImgViewer

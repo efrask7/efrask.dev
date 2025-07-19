@@ -10,7 +10,12 @@ export default {
 				'custom2': '#f5c39c',
 				'custom2-1': '#e66429',
 				'title': '#dd7738',
-				'btns': '#f5c39c'
+				'btns': '#f5c39c',
+				'custom_icon': '#f8d659',
+				'custom2_icon': '#2a73b8',
+				'custom2-1_icon': '#2b74b9',
+				'title_icon': '#2c76ba',
+				'btns_icon': '#2d76ba'
 			},
 			keyframes: {
 				'bounce-horizontal': {
