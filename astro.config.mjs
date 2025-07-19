@@ -38,7 +38,7 @@ export default defineConfig({
       ]
     }),
     purgecss({
-      css: ['./src/**/*.css'],
+      css: ['./**/*.css'],
     })
   ],
   site: 'https://efrask.dev',
