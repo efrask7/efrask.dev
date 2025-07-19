@@ -20,7 +20,7 @@ const description = await getTextI18(lang, "page_description");
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="canonical" href="https://efrask.dev" />
+		<link rel="canonical" href={`https://efrask.dev${Astro.url.pathname}`} />
 		<meta name="robots" content="index, follow" />
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content={title} />
