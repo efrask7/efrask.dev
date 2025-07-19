@@ -8,6 +8,8 @@ import react from '@astrojs/react';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap'
 
+import purgecss from 'astro-purgecss'
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
@@ -34,7 +36,13 @@ export default defineConfig({
       customPages: [
         'https://efrask.dev/projects',
       ]
+    }),
+    purgecss({
+      css: ['./**/*.css'],
     })
   ],
-  site: 'https://efrask.dev'
+  site: 'https://efrask.dev',
+  build: {
+    inlineStylesheets: 'never'
+  }
 });
