@@ -1,6 +1,8 @@
 ---
+import { Icon } from "astro-icon/components";
 import Error404 from "../components/Error404.astro";
 import Layout from "../layouts/Layout.astro";
+import getTextI18 from "../utils/getTexti18";
 import getSupportedLangs from "../utils/lang";
 
 const supportedLangs = getSupportedLangs();
@@ -14,8 +16,15 @@ const { lang } = Astro.params;
 if (!supportedLangs.map((l) => l.params.lang).includes(lang)) {
   Astro.redirect("/es");
 }
+
+const start = await getTextI18(lang, "index_page");
 ---
 
 <Layout>
+  <div class="flex justify-center">
+    <a href="/" class="text-4xl rounded-full p-2 bg-btns_icon">
+      <Icon name="lucide:home" />
+    </a>
+  </div>
   <Error404 />
 </Layout>
