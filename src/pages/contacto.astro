@@ -1,0 +1,117 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+
+Astro.params.lang = "es";
+
+const contact = {
+	name: "Efraín Schettini",
+	org: "Efrask Tech UY",
+	title: "Desarrollador Web",
+	phone: "+59892001684",
+	email: "efrainschettini@gmail.com",
+	website: "https://efrask.dev",
+	github: "https://github.com/efrask7",
+	whatsapp: "https://wa.me/59892001684",
+	avatar: "https://avatars.githubusercontent.com/efrask7",
+};
+
+const actions = [
+	{
+		label: "Guardar contacto",
+		href: "/contacto.vcf",
+		icon: "lucide:download",
+	},
+	{
+		label: "WhatsApp",
+		href: contact.whatsapp,
+		icon: "lucide:message-circle",
+		target: "_blank",
+	},
+	{
+		label: "Email",
+		href: `mailto:${contact.email}`,
+		icon: "lucide:mail",
+	},
+];
+---
+
+<Layout>
+	<section class="flex min-h-[70vh] items-center justify-center">
+		<div
+			class="w-full max-w-xl overflow-hidden rounded-lg border border-sky-200/15 bg-slate-900/70 shadow-2xl shadow-slate-950/20 backdrop-blur-sm"
+		>
+			<div class="flex flex-col items-center gap-4 px-6 py-8 text-center sm:px-10">
+				<img
+					src={contact.avatar}
+					alt={`Foto de ${contact.name}`}
+					class="size-28 rounded-full border-2 border-sky-200/25 bg-slate-100 object-cover shadow-lg shadow-slate-950/25"
+				/>
+
+				<div class="flex flex-col gap-1">
+					<h1 class="font-raleway text-3xl font-bold text-slate-100">
+						{contact.name}
+					</h1>
+					<p class="text-lg text-slate-200">{contact.title}</p>
+					<p class="text-sm text-slate-400">{contact.org}</p>
+				</div>
+
+				<div class="grid w-full gap-3 pt-4 sm:grid-cols-1">
+					{
+						actions.map((action) => (
+							<a
+								href={action.href}
+								target={action.target}
+								rel={action.target === "_blank" ? "noreferrer" : undefined}
+								class="grid min-h-14 grid-cols-[3.5rem_1px_1fr] relative items-center rounded-lg border border-sky-200/20 bg-slate-800/60 font-montserrat text-sky-100 transition-colors hover:border-sky-200/35 hover:bg-slate-700/70 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-200/60 focus:ring-offset-2 focus:ring-offset-slate-950"
+							>
+								<span class="flex items-center justify-center">
+									<Icon name={action.icon} class="size-5" />
+								</span>
+								<span class="h-6 w-px bg-sky-200/15"></span>
+								<span class="px-4 py-3 text-center absolute left-1/2 -translate-x-1/2 w-full">{action.label}</span>
+							</a>
+						))
+					}
+				</div>
+			</div>
+
+			<div class="border-t border-sky-200/10 bg-slate-950/20 px-6 py-5 sm:px-10">
+				<dl class="grid gap-3 text-sm text-slate-200 sm:grid-cols-[auto_1fr]">
+					<dt class="text-slate-400">Teléfono</dt>
+					<dd>
+						<a href={`tel:${contact.phone}`} class="text-sky-200 hover:text-white">
+							{contact.phone}
+						</a>
+					</dd>
+
+					<dt class="text-slate-400">Email</dt>
+					<dd>
+						<a href={`mailto:${contact.email}`} class="break-all text-sky-200 hover:text-white">
+							{contact.email}
+						</a>
+					</dd>
+
+					<dt class="text-slate-400">Web</dt>
+					<dd>
+						<a href={contact.website} class="text-sky-200 hover:text-white">
+							efrask.dev
+						</a>
+					</dd>
+
+					<dt class="text-slate-400">GitHub</dt>
+					<dd>
+						<a
+							href={contact.github}
+							target="_blank"
+							rel="noreferrer"
+							class="text-sky-200 hover:text-white"
+						>
+							/efrask7
+						</a>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</section>
+</Layout>
