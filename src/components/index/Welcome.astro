@@ -10,22 +10,22 @@ const { lang } = Astro.params as {
 const subtitle = await getTextI18(lang, "subtitle");
 ---
 
-<div class="flex gap-2 flex-col items-center relative">
-  <div class="flex flex-col gap-1 items-center">
-    <a href={lang === "es" ? "/en" : "/"} class="text-btns hover:text-btns/90">
+<div class="flex gap-6 flex-col items-center relative text-bg-light">
+  <div class="flex flex-col gap-3 items-center">
+    <a href={lang === "es" ? "/en" : "/"} class="text-btns hover:text-primary-light transition-colors">
       {lang === "es" ? "English?" : "¿Español?"}
     </a>
     <img
-      src="https://avatars.githubusercontent.com/efrask7"
-      alt="efrask7 Github Image"
-      class="rounded-full size-48 shadow-md shadow-slate-300"
+      src="/brand.png"
+      alt="efrask.dev brand"
+      class="w-full max-w-80 sm:max-w-80 rounded-md p-4 drop-shadow-[0_18px_36px_rgba(37,99,235,0.35)]"
     />
     <h1
-      class="font-bold uppercase tracking-wide text-justify text-title_icon text-2xl"
+      class="font-bold uppercase tracking-wide text-center text-title_icon text-2xl"
     >
       Efraín Schettini
     </h1>
-    <p class="text-xl tracking-wide text-center">{subtitle}</p>
+    <p class="text-xl tracking-wide text-center text-primary-light">{subtitle}</p>
   </div>
 
   <div

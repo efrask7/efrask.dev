@@ -24,24 +24,24 @@ const visit_repo = await getTextI18(lang, "visit_git_btn");
 ---
 
 <div
-  class="shadow shadow-custom2 rounded-md px-4 py-2 flex flex-col gap-2 w-full bg-[#1a1a1a]"
+  class="border border-primary/30 shadow shadow-primary/20 rounded-md px-4 py-2 flex flex-col gap-2 w-full bg-bg-dark/80"
 >
   <h3
     class="text-center
   text-xl
   uppercase
   tracking-wide
-  font-bold bg-white/10 py-1 rounded-md"
+  font-bold bg-primary/15 py-1 rounded-md text-primary-light"
   >
     {name}
   </h3>
-  <p class="bg-white/10 px-2 py-3 rounded-md">{description}</p>
+  <p class="bg-bg-light/10 px-2 py-3 rounded-md text-bg-light">{description}</p>
 
   <ImagesCarrousel path={imagesPath} images={images} client:load />
 
   <div class="flex flex-col gap-2">
     <div
-      class="flex gap-1 justify-center bg-white/10 py-2 rounded-md flex-wrap"
+      class="flex gap-1 justify-center bg-bg-light/10 py-2 rounded-md flex-wrap"
     >
       {
         technologies.map((skill) => (
@@ -64,7 +64,7 @@ const visit_repo = await getTextI18(lang, "visit_git_btn");
             href={github}
             target="_blank"
             title={visit_repo}
-            class="rounded-full flex items-center justify-center gap-1 px-2 py-1 text-btns transition-colors hover:bg-white/10"
+            class="rounded-full flex items-center justify-center gap-1 px-2 py-1 text-btns transition-colors hover:bg-primary/15"
           >
             <Icon name="lucide:github" class="mt-1" />
             Github
@@ -77,7 +77,7 @@ const visit_repo = await getTextI18(lang, "visit_git_btn");
             href={website}
             target="_blank"
             title={visit_web}
-            class="rounded-full flex items-center justify-center gap-1 px-2 py-1 text-btns transition-colors hover:bg-white/10"
+            class="rounded-full flex items-center justify-center gap-1 px-2 py-1 text-btns transition-colors hover:bg-primary/15"
           >
             <Icon name="lucide:external-link" class="mt-1" />
             {visit_web}

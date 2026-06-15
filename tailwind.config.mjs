@@ -6,16 +6,28 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'custom': '#f33ba4',
-				'custom2': '#f5c39c',
-				'custom2-1': '#e66429',
-				'title': '#dd7738',
-				'btns': '#f5c39c',
-				'custom_icon': '#f8d659',
-				'custom2_icon': '#2a73b8',
-				'custom2-1_icon': '#2b74b9',
-				'title_icon': '#2c76ba',
-				'btns_icon': '#2d76ba'
+				'bg-dark': '#0B1220',
+				'bg-light': '#F3F4F6',
+				'primary': '#2563EB',
+				'primary-light': '#93C5FD',
+				'text-main': '#111827',
+				'text-muted': '#64748B',
+				'border-soft': '#E5E7EB',
+				'gray-medium': '#94A3B8',
+				'success': '#10B981',
+				'purple': '#8B5CF6',
+				'warning': '#F59E0B',
+				'error': '#EF4444',
+				'custom': '#2563EB',
+				'custom2': '#93C5FD',
+				'custom2-1': '#2563EB',
+				'title': '#93C5FD',
+				'btns': '#93C5FD',
+				'custom_icon': '#2563EB',
+				'custom2_icon': '#93C5FD',
+				'custom2-1_icon': '#F3F4F6',
+				'title_icon': '#2563EB',
+				'btns_icon': '#2563EB'
 			},
 			keyframes: {
 				'bounce-horizontal': {

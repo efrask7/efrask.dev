@@ -42,9 +42,9 @@ export default function UserHeader({ lang }: IUserHeadersProps) {
     <div className={`flex items-center gap-1 ${show ? 'opacity-100 cursor-pointer pointer-events-auto' : 'opacity-0 cursor-none pointer-events-none'} transition-opacity`}>
       <a href={`/${lang}`} className="text-btns" title={index_lang}>efrask.dev</a>
       <img
-        src="https://avatars.githubusercontent.com/efrask7"
-        alt="efrask7"
-        className="size-6 rounded-full"
+        src="/brand.png"
+        alt="efrask.dev"
+        className="h-6 w-auto rounded-sm bg-bg-light p-0.5"
       />
     </div>
   )

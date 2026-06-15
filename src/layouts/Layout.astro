@@ -17,7 +17,7 @@ const description = await getTextI18(lang, "page_description");
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/logo.png" />
+		<link rel="icon" type="image/png" href="/logo_rounded.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="canonical" href={`https://efrask.dev${Astro.url.pathname}`} />
 		<meta name="robots" content="index, follow" />
@@ -45,8 +45,8 @@ const description = await getTextI18(lang, "page_description");
 		<ClientRouter />
 
 		<!-- PRELOAD -->
+		<link rel="preload" href="/brand.png" as="image" />
 		<link rel="preload" href="/logo.webp" as="image" />
-		<link rel="preload" href="/logo.png" as="image" />
 		<!-- PRELOAD FONTS -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -61,7 +61,7 @@ const description = await getTextI18(lang, "page_description");
 			as="style"
 		/>
 	</head>
-	<body class="bg-[#1a1a1a] size-full flex flex-col gap-2 items-center">
+	<body class="bg-bg-dark text-bg-light size-full flex flex-col gap-2 items-center">
 		<!-- <Header /> -->
 
 		<main

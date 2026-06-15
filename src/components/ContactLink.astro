@@ -6,8 +6,8 @@ const { href, target, showBg = true } = Astro.props;
   href={href}
   target={target}
   class:list={[
-    "flex items-center gap-1 text-btns hover:text-btns/90 px-2 py-1 rounded-lg",
-    { "bg-black/50": showBg },
+    "flex items-center gap-1 text-btns hover:text-primary-light px-2 py-1 rounded-lg transition-colors",
+    { "bg-bg-dark/80 border border-primary/30 shadow-sm shadow-primary/10": showBg },
   ]}
 >
   <slot />

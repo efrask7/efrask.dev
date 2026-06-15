@@ -22,7 +22,7 @@ export default function Snow() {
         speed={[0.2, 0.6]}
         wind={[0.5, 1.2]}
         opacity={[0.1, 0.5]}
-        color="pink"
+        color="#93C5FD"
         images={[star1, star2]}
         radius={[1, 16]}
       />
