@@ -8,8 +8,13 @@ const { lang } = Astro.params as {
 	lang: string;
 };
 
-const title = await getTextI18(lang, "page_title");
-const description = await getTextI18(lang, "page_description");
+const { title: titleProp, description: descriptionProp } = Astro.props as {
+	title?: string;
+	description?: string;
+};
+
+const title = titleProp ?? (await getTextI18(lang, "page_title"));
+const description = descriptionProp ?? (await getTextI18(lang, "page_description"));
 ---
 
 <!doctype html>
