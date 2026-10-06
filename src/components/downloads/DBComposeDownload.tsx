@@ -15,7 +15,7 @@ interface LatestRelease {
   platforms: Record<string, ReleasePlatform | undefined>
 }
 
-const LATEST_JSON_URL = "https://files.efrask.dev/dbcompose/stable/latest.json"
+const LATEST_JSON_URL = "https://updates.efrask.dev/dbcompose/stable/latest"
 
 function isValidUrl(value: unknown): value is string {
   return typeof value === "string" && value.length > 0
